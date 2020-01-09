@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Walmart Sales Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: #4CAF50;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Walmart Sales Prediction</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        Store: (Between 1 to 45)<br>
+        <input type="text" name="store" value="5">
+        Dept: (Between 1 to 99)<br>
+        <input type="text" name="dept" value="5">
+        Date: <br> 
+        <input type="date" name="sales_day"> <br>
+        Is Holiday: <br>
+        <input type="radio" name="IsHoliday" value="1"> Yes<br>
+        <input type="radio" name="IsHoliday" value="0"> No<br>
+        <input class="button" type="submit" value="Predict"> 
+        <br>
+        <br>
+        <br>
+        <h1>{% if label %} {{ label }} {% endif %}</h1>
+    </form>
+
+</body>
+
+</html>
